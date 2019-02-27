@@ -1,0 +1,23 @@
+a := func() {
+    fmt.Println("First class function!")
+}
+
+
+func higherOrder(a func(a, b int) int) {  
+    fmt.Println(a(60, 7))
+}
+
+
+func returnFunc() func(a, b int) int {  
+    f := func(a, b int) int {
+        return a + b
+    }
+    return f
+}
+
+
+type funcType func(a int, b int) int
+
+func higherOrder(a funcType) {  
+    fmt.Println(a(60, 7))
+}

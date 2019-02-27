@@ -1,0 +1,39 @@
+type Activity struct {
+	Id       string
+	Distance int
+	Type     string // "RUN" | "RIDE"
+}
+
+
+
+func (a Activity) Distance() int {
+	return a.distance
+}
+
+
+
+type Run struct {
+	Id       string
+	Distance int
+}
+
+type Ride struct {
+	Id       string
+	Distance int
+}
+
+
+
+type Activity interface {
+	Distance() int
+}
+
+
+
+func (run Run) Distance() int {
+	return run.distance
+}
+
+func (ride Ride) Distance() int {
+	return ride.distance
+}

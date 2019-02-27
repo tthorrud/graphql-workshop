@@ -1,0 +1,21 @@
+package main
+
+import (
+    "fmt"
+    "log"
+    "net/http"
+)
+
+
+func main() {
+	http.HandleFunc("/", routeHandler)
+	http.ListenAndServe(":8080", nil)
+}
+
+
+func routeHandler(
+	writer http.ResponseWriter,
+	request *http.Request
+) {
+	fmt.Fprintf(writer, r.URL.EscapedPath())
+}

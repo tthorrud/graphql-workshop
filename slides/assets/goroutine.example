@@ -1,0 +1,25 @@
+func doSomething(str sting) {
+     for i := 1; i <= 3; i++ {
+          fmt.Printf("%s: %d", str, i)
+     }
+}
+
+func main() {
+    doSomething("Hello")
+
+    go doSomething("World")
+
+    go func() {
+        fmt.Print("Go routines are awesome")
+    }()
+}
+
+
+
+// Hello: 1
+// Hello: 2
+// Hello: 3
+// World: 1
+// Go routines are awesome
+// World: 2
+// World: 3
